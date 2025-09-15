@@ -7,15 +7,20 @@ console.log (ListadeAmigos);
 function agregarAmigo(){
 
     let nombreAmigo = document.getElementById('amigo').value;
-    if(nombreAmigo== null){
+    if(nombreAmigo === ""){
+      alert("ESCRIBE UN NOMBRE!!!");
       return ;
     }
     else{
-    ListadeAmigos.push(nombreAmigo);                //almacenando el nombre en la lista
-    console.log (ListadeAmigos);
-    conteo++;
-   asignarTextoElemento('ul',`Amigo número ${conteo} ${nombreAmigo}`);//muestra debajo de la caja de texto  el numero y  nombre asigando 
-   limpiarcaja();
+      ListadeAmigos.push(nombreAmigo);                //almacenando el nombre en la lista
+      console.log (ListadeAmigos);
+      conteo++;
+      console.log(conteo);
+      asignarTextoElemento('ul',`Amigo número ${conteo} ${nombreAmigo}`);//muestra debajo de la caja de texto  el numero y  nombre asigando 
+      limpiarcaja();
+      if(conteo == 4){
+          asignarTextoElemento('h2',"PULSA EL BOTON SORTEAR AMIGO");
+        }
     }
 
 }
